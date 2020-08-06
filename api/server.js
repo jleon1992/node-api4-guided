@@ -7,6 +7,9 @@ const server = express();
 
 server.use(helmet());
 
+server.get('/', (req, res) => {
+    res.status(200).json({ message: 'welcome'})
+})
 server.use('/api', apiRouter);
 
 module.exports = server;
